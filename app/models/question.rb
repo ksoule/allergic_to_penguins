@@ -1,8 +1,8 @@
 class Question < ApplicationRecord
   # Remember to create a migration!
   belongs_to :survey
-  has_many :answer_options
-  has_one :creator, through: :survey
-  has_many :choices, through: :answer_options
-  has_many :takers, through: :choices
+  has_many :possible_answers
+  has_one :creator, through: :survey, source: 'User'
+  has_many :choices, through: :possible_answers
+  has_many :responders, through: :choices, source: 'User'
 end
