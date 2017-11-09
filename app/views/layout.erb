@@ -18,6 +18,11 @@
   <title>Survey Puffin</title>
 </head>
 <body>
+
+  <% if @errors %>
+    <%= erb :'/_errors' %>
+  <% end %>
+
   <%= yield %>
 </body>
 </html>
