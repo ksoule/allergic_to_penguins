@@ -8,9 +8,9 @@ class User < ApplicationRecord
   has_many :created_questions, through: :created_surveys
   has_many :answered_questions, through: :choices
 
-  validates_uniqueness_off :username, :email
+  validates_uniqueness_of :username, :email
   validates_presence_of :username, :email
-  validates :password, length: { in: 6..20 }
+  validate :validate_password
 
   def password
       @password ||= Password.new(hashed_password)
