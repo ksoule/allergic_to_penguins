@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-gem bcrypt
-gem extra_print
+gem 'bcrypt'
+gem 'extra_print'
 # PostgreSQL driver
 gem 'pg'
 
