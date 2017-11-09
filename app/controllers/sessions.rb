@@ -1,7 +1,8 @@
 # prepped for ajax
 
 get '/sessions/new' do
-  erb :'/surveys/index'
+  # partial is loaded up and ready for ajax
+  erb :'/_login_form'
 end
 
 post '/sessions' do

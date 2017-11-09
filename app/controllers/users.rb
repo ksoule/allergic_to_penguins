@@ -1,5 +1,6 @@
 get '/users/new' do
-  erb :'/surveys/index'
+  # partial is loaded up and ready for ajax
+  erb :'/_registration_form'
 end
 
 post '/users' do
