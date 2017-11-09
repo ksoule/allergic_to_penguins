@@ -104,5 +104,3 @@ DEPENDENCIES
   shoulda-matchers
   sinatra (~> 1.0)
   sinatra-contrib
-
-
