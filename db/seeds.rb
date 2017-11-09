@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 User.destroy_all
 Choice.destroy_all
 Survey.destroy_all
@@ -54,5 +53,3 @@ PossibleAnswer.create!(text: "Christmas", question_id: "2")
 PossibleAnswer.create!(text: "Memorial Day", question_id: "2")
 PossibleAnswer.create!(text: "New Year's Eve", question_id: "2")
 PossibleAnswer.create!(text: "Thanksgiving", question_id: "2")
-
->>>>>>> ba0a95c254c454a666d6a054a12766e95e77b413
