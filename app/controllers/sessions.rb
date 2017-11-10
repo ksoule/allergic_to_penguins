@@ -2,7 +2,7 @@
 
 get '/sessions/new' do
   # partial is loaded up and ready for ajax
-  erb :'/_login_form'
+  erb :'/sessions/_login_form', layout: false
 end
 
 post '/sessions' do

@@ -1,4 +1,5 @@
 get '/' do
+  session.destroy
   redirect '/surveys'
 end
 
