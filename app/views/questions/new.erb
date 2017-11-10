@@ -1,12 +1,12 @@
 <h1>Survey Puffin!</h1>
 
 <center>
-  <form class="add-new-question" method="POST" action="/questions">
+  <form class="add-new-question" method="GET" action="/questions">
     <label>Question: </label>
     <input type="text" name="question">
     <br>
     <br>
-    <input type="submit" value="Next Step: Add Potential Responses">
+     <button type="submit" formaction="/answers/new">Add potential responses</button>
 
   </form>
 </center>

@@ -3,7 +3,7 @@ get '/answers/new' do
 end
 
 
-post '/questions' do
+post '/answers' do
   @answer = answer.new(params[:answer])
   if @answer.save
   redirect "/answers"
