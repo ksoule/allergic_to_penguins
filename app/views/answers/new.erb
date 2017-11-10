@@ -1,0 +1,22 @@
+<h1>Survey Puffin!</h1>
+
+<form class="add-new-answer" action="/answers" method="GET">
+  <label>Potential Response: </label>
+  <input type="text" name="answer" placeholder="Enter Potential Response Here" size="100">
+  <br>
+  <br>
+  <label>Potential Response: </label>
+   <input type="text" name="answer" placeholder="Enter Potential Response Here" size="100">
+  <br>
+  <br>
+
+<!-- Need to add listeners for these actions -->
+<!-- Need listener to append new input for new response -->
+<!-- More of a click event...not submitting anything yet -->
+  <button type="submit" formaction="/answers/new">Add additional response</button>
+<!-- Need listener to direct to new question? -->
+  <button type="submit" formaction="/questions/new">Add new Question</button>
+  <!-- Need listener to show entire survey or keep as redirect to main page  -->
+  <button type="submit" formaction="/surveys">Post Your Survey</button>
+
+</form>
