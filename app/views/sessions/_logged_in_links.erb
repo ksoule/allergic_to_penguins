@@ -1,6 +1,6 @@
-  <p>Hi, <%= current_user.username%>!</p>
+  <p id="greeting">Hi, <%= current_user.username%>!</p>
 
-  <form method="post" action="/sessions">
+  <form id="logout-form" method="post" action="/sessions">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" class="delete-button" value="logout">
   </form>

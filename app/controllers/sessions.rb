@@ -14,3 +14,7 @@ post '/sessions' do
   end
   erb :'/sessions/_logged_in_links', layout: false
 end
+
+delete '/sessions' do
+  session[:user_id] = nil
+end

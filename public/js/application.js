@@ -1,29 +1,17 @@
 $(document).ready(function() {
   $("#register-link").on("click", regFormHandler)
-
   $("nav").on("click", "#dropdown-login-link",switchToLoginHandler)
-
   $("nav").on("submit", "#registration", newUserHandler)
-
   $("nav").on("submit", "#login-form", newSessionHandler)
-
+  $("nav").on("submit", "#logout-form", deleteSessionHandler)
 });
 
 var regFormHandler = function(event) {
   event.preventDefault()
-  var $regLink = $(this);
-
-  var promise = $.ajax ({
-    url: $regLink.attr("href")
-  })
-
-  promise.done(function(response) {
-    $regLink.hide()
-    $("nav").append(response)
-  }).always(function() {
-    console.log("Registration form loaded!")
-  })
-
+  $(this).hide()
+  $("#registration").show()
+  $(".login-prompt").show()
+  console.log("Registration form loaded!")
 };
 
 var switchToLoginHandler = function(event) {
@@ -43,20 +31,14 @@ var switchToLoginHandler = function(event) {
   })
 }
 
-// JSONify reg form
-// JSONify login form (JSON?)
-// Swap links
-
 var newUserHandler = function(event) {
   event.preventDefault()
-  // console.log("blah");
   var $regForm = $(this);
 
   var promise = $.ajax ({
     url: $regForm.attr("action"),
     method: $regForm.attr("method"),
     data: $regForm.serialize()
-    // data are the new params
   })
 
   promise.done(function(response) {
@@ -70,7 +52,6 @@ var newUserHandler = function(event) {
 
 var newSessionHandler = function(event) {
   event.preventDefault()
-  //console.log("bloop de bloop bloop... I'm making the puter work")
   var $loginForm = $(this)
 
   var promise = $.ajax ({
@@ -80,12 +61,31 @@ var newSessionHandler = function(event) {
   })
 
   promise.done(function(response){
-    //console.log(response)
     $loginForm.hide()
     $("nav").append(response)
+  }).always(function(){
+    console.log("A user has logged in!")
   })
 };
 
+var deleteSessionHandler = function(event) {
+  event.preventDefault()
+  var $logoutForm = $(this);
+
+  var promise = $.ajax ({
+    url: $logoutForm.attr("action"),
+    method: "delete"
+  })
+
+  promise.done(function(){
+    $("#registration").trigger("reset")
+    $("#logout-form").remove()
+    $("#greeting").remove()
+    $("#register-link").show()
+  }).always(function(){
+    console.log("Logged out!")
+  })
+};
 
 
 
