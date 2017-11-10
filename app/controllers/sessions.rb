@@ -1,34 +1,16 @@
-# get '/sessions/new' do
-#   erb :'sessions/new'
-# end
+# prepped for ajax
 
+get '/sessions/new' do
+  # partial is loaded up and ready for ajax
+  erb :'/_login_form'
+end
 
-# post '/sessions' do
-#   user = self.authenticate(params[:email], params[:password])
-#   if user
-#     session[:user_id] = user.id
-#     redirect '/'
-#   else
-#     erb :'sessions/new'
-#   end
-# end
-
-# post  '/users' do
-#   @user = User.new(params[:user])
-#   if @user.save
-#     session[:user_id] = @user.id
-#     redirect "/users/#{@user.id}"
-#   else
-#     @errors = @user.errors.full_messages
-#     erb :'users/new'
-#   end
-# end
-
-# def authenticate(email, password)
-#     @user = User.find_by(email)
-#     if @user.password == self.password
-
-#     else
-#     end
-# end
-
+post '/sessions' do
+  @user = User.find_by(email: params[:email])
+  if @user && @user.authenticate!(params[:password])
+    session[:user_id] = @user.id
+  else
+    @errors = @user.errors.full_messages
+  end
+  erb :'/surveys/index'
+end
