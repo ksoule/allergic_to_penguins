@@ -12,7 +12,7 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title>Survey Puffin</title>
@@ -24,6 +24,7 @@
       <%= erb :'/sessions/_logged_in_links' %>
     <% else %>
       <%= erb :'/sessions/_logged_out_links' %>
+      <%= erb :'/users/_registration_form' %>
     <% end %>
   </nav>
 

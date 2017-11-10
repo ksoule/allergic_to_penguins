@@ -36,3 +36,11 @@ nav {
   cursor: pointer;
   display: inline;
 }
+
+.hidden {
+  display: none;
+}
+
+a:visited {
+  color: black;
+}
