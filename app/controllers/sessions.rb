@@ -7,10 +7,10 @@ end
 
 post '/sessions' do
   @user = User.find_by(email: params[:email])
-  if @user && @user.authenticate!(params[:password])
+  if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
   else
     @errors = @user.errors.full_messages
   end
-  erb :'/surveys/index'
+  erb :'/sessions/_logged_in_links', layout: false
 end

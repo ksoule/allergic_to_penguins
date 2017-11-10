@@ -4,6 +4,9 @@ $(document).ready(function() {
   $("nav").on("click", "#dropdown-login-link",switchToLoginHandler)
 
   $("nav").on("submit", "#registration", newUserHandler)
+
+  $("nav").on("submit", "#login-form", newSessionHandler)
+
 });
 
 var regFormHandler = function(event) {
@@ -63,11 +66,25 @@ var newUserHandler = function(event) {
   }).always(function() {
     console.log("User logged in!")
   })
-
-
 };
 
+var newSessionHandler = function(event) {
+  event.preventDefault()
+  //console.log("bloop de bloop bloop... I'm making the puter work")
+  var $loginForm = $(this)
 
+  var promise = $.ajax ({
+    url: $loginForm.attr("action"),
+    method: $loginForm.attr("method"),
+    data: $loginForm.serialize()
+  })
+
+  promise.done(function(response){
+    //console.log(response)
+    $loginForm.hide()
+    $("nav").append(response)
+  })
+};
 
 
 
