@@ -1,6 +1,6 @@
-class CreatePossibleAnswers < ActiveRecord::Migration[5.1]
+class CreateAnswers < ActiveRecord::Migration[5.1]
   def change
-    create_table :possible_answers  do |t|
+    create_table :answers  do |t|
       t.string :text, null: false
       t.integer :question_id
 
