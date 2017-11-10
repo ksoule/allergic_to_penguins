@@ -3,7 +3,8 @@ require 'bcrypt'
 class User < ApplicationRecord
   include BCrypt
   # Remember to create a migration!
-
+  has_many :surveys, foreign_key: :creator_id
+  has_many :choices, foreign_key: :chooser_id
 
 
   validates_uniqueness_of :username, :email
