@@ -21,7 +21,6 @@ var viewSurveyHandler = function(event){
 
 var submitSurveyHandler = function(event){
   event.preventDefault()
-  // console.log("blah")
   var $survey = $(this);
 
   var promise = $.ajax ({
