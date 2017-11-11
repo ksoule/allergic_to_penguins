@@ -1,6 +1,6 @@
 <h1>Survey Puffin!</h1>
 
-<form class="add-new-answer" action="/answers" method="GET">
+<form class="add-new-answer" action="/questions/<%= question.id %>/answers" method="post">
   <label>Potential Response: </label>
   <input type="text" name="answer" placeholder="Enter Potential Response Here" size="100">
   <br>

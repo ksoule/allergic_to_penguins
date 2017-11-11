@@ -1,13 +1,14 @@
-<h1>Survey Puffin!</h1></ce
+<h1>Survey Puffin!</h1>
 
 
 <center>
-  <form class="add-new-question" method="GET" action="/questions">
+  <form class="add-new-question-form" method="post" action="/surveys/<%= @survey.id %>/questions">
     <label>Question: </label>
     <input type="text" name="question">
     <br>
     <br>
-     <button type="submit" formaction="/answers/new">Add potential responses</button>
+    <input type="submit" value="Add Potential Responses">
+     <!-- <button type="submit" formaction="/answers/new">Add potential responses</button> -->
 
   </form>
 </center>

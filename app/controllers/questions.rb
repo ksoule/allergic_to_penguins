@@ -2,6 +2,10 @@ get '/questions/new' do
   erb :'/questions/new'
 end
 
+get '/questions' do
+  @question = Question.new(params[:question])
+  erb :'/questions/new'
+end
 
 post '/questions' do
   @question = Question.new(params[:question])
