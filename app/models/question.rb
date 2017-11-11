@@ -4,7 +4,7 @@ class Question < ApplicationRecord
   has_many :answers
 
 #stats per question {answer.id: answer.choices.count,}
-  def raw_stats
+def raw_stats
     data_set = {}
     self.answers.each{|answer|
         data_set[answer.id] = answer.choices.count

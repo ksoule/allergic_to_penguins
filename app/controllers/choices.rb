@@ -10,5 +10,5 @@ post '/choices' do
   # Will change redirect to erb and implement AJAX.
 
 
-  erb :'/surveys/_results'
+  erb :'/surveys/_results', layout: false
 end
