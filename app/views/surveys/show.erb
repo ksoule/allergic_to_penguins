@@ -1,9 +1,5 @@
 <h1><%= @survey.title %></h1>
 
-<!-- Loop through questions -->
-<!-- Loop through each question's answers in form? -->
-<!-- Maybe like you did with the other thing... -->
-
 <form class="possible_choices" action="/choices" method="post">    
 
   <% @questions.each do |question| %>
