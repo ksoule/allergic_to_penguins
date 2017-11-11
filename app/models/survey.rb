@@ -12,4 +12,4 @@ def survey_stats
   stat_array
 end
 
-#Note: stat array returns [{answer.id: choice.count},{answer.id: choice.count, answer.id: choice.count}] the question is going to be the array position + 1
+#Note: stat array returns [{answer.id: choice.count},{answer.id: choice.count, answer.id: choice.count}] the question number is going to be the array position + 1
