@@ -5,3 +5,4 @@ class Answer < ApplicationRecord
 
 
 end
+
