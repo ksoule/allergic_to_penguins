@@ -1,4 +1,9 @@
 <h2>Take a survey!</h2>
+<% if logged_in? %>
+  <form class="new-survey" action="/surveys/new" method="post">
+    <input type="submit" value="Create New Survey">
+  </form>
+<% end %>
 
 <div class="surveys-container">
   <ul>

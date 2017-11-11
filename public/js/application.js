@@ -4,6 +4,7 @@ $(document).ready(function() {
   $("nav").on("submit", "#registration", newUserHandler)
   $("nav").on("submit", "#login-form", newSessionHandler)
   $("nav").on("submit", "#logout-form", deleteSessionHandler)
+  // $("nav").on("submit", ".newSurvey", newSurveyHandler)
 });
 
 var regFormHandler = function(event) {
@@ -86,8 +87,31 @@ var deleteSessionHandler = function(event) {
     console.log("Logged out!")
   })
 };
+// var newSurveyHandler = function() {
+//   event.preventDefault();
+//   console.log("in newSurveyHandler")
 
+//   var $newSurveyButton = $(this);
+//   console.log(this);
+//   var url = $newSurveyButton.attr("action");
+//   console.log(url);
+//   var method = $newSurveyButton.attr("method");
+//   console.log(method);
+//   var data = $newSurveyButton.serialize();
+//   console.log(data);
 
+//   var request = $.ajax({
+//     url: url,
+//     method: method,
+//     data: data
+//   });
+
+//   request.done(function(){
+//     $newSurveyButton.append($this);
+//     $('body').append(response);
+//     console.log("done");
+//   });
+// }
 
 
 
