@@ -1,12 +1,9 @@
-<h1>Welcome to Survey Puffin!</h1>
-<!-- PUT PUFFIN IMAGE!!!! -->
-
 <h2>Take a survey!</h2>
 
 <div class="surveys-container">
   <ul>
     <% @surveys.each do |survey| %>
-      <li><a href="/surveys/<%= survey.id %>"><%= survey.title %></a></li>
+      <li><a class="js--survey" href="/surveys/<%= survey.id %>"><%= survey.title %></a></li>
       <li>Created by: <%= survey.creator.username %> </li>
     <% end %>
   </ul>

@@ -26,7 +26,7 @@ get '/surveys/:id' do
   @survey = Survey.find_by(id: params[:id])
   @questions = @survey.questions
 
-  erb :'/surveys/show'
+  erb :'/surveys/show', layout: false
 end
 
 

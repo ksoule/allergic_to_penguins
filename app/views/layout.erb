@@ -14,6 +14,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="/js/application2.js"></script>
 
   <title>Survey Puffin</title>
 </head>
@@ -26,12 +27,19 @@
       <%= erb :'/sessions/_logged_out_links' %>
       <%= erb :'/users/_registration_form' %>
     <% end %>
+    <a href="/">Home</a>
   </nav>
 
   <% if @errors %>
     <%= erb :'/_errors' %>
   <% end %>
 
-  <%= yield %>
-</body>
+  <h1>Welcome to Survey Puffin!</h1>    
+    <div class="dynamic-div">
+
+
+      <%= yield %>
+
+    </div>
+  </body>
 </html>
