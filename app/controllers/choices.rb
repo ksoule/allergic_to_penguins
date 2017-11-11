@@ -1,4 +1,6 @@
 post '/choices' do 
+  @survey = Survey.find_by(id: params[:survey_id])
+  @stats = @survey.survey_stats
   user_choices = params[:choice].values
 
   user_choices.each do |answer_id|
@@ -6,5 +8,7 @@ post '/choices' do
   end
 
   # Will change redirect to erb and implement AJAX.
-  redirect '/surveys' 
+
+
+  erb :'/surveys/_results'
 end
