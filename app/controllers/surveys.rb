@@ -1,9 +1,10 @@
 get '/' do
-  session.destroy
+  # session.destroy
   redirect '/surveys'
 end
 
 get '/surveys' do
+  @surveys = Survey.all
   erb :'/surveys/index'
 end
 
@@ -19,6 +20,13 @@ post '/surveys' do
     @errors = @survey.errors.full_messages
     erb :'/surveys/new'
   end
+end
+
+get '/surveys/:id' do 
+  @survey = Survey.find_by(id: params[:id])
+  @questions = Survey.questions
+  
+  erb :'/surveys/show'
 end
 
 
