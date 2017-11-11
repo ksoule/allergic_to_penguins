@@ -3,8 +3,13 @@
 
 <h2>Take a survey!</h2>
 
-<div class="container">
-  <p class="todos">*Survey list will go here*</p>
+<div class="surveys-container">
+  <ul>
+    <% @surveys.each do |survey| %>
+      <li><a href="/surveys/<%= survey.id %>"><%= survey.title %></a></li>
+      <li>Created by: <%= survey.creator.username %> </li>
+    <% end %>
+  </ul>
 </div>
 
 
