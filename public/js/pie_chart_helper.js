@@ -1,4 +1,3 @@
-<script type="text/javascript">
 window.onload = function () {
   var chart = new CanvasJS.Chart("chartContainer",
   {
@@ -12,15 +11,11 @@ window.onload = function () {
     },
     data: [
     {
-      type: "pie",
-      showInLegend: true,
-      legendText: "{indexLabel}",
+      type: "column",
      // # [{answer.id: choice.count},{answer.id: choice.count, answer.id: choice.count}]
       dataPoints: [
      // #Each hash in the array is a question. Key is the answer.id, value is the count.
       // #In this case the y: would = the value. index label is the answer.text for answer.id
-
-        { y: 4181563, indexLabel: "PlayStation 3" },
 
       ]
     }
@@ -28,7 +23,4 @@ window.onload = function () {
   });
   chart.render();
 }
-</script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
