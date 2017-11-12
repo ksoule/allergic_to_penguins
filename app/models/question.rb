@@ -7,7 +7,7 @@ class Question < ApplicationRecord
 def raw_stats
     data_set = {}
     self.answers.each{|answer|
-        data_set[answer.id] = answer.choices.count
+        data_set[answer.text] = answer.choices.count
       }
     data_set
   end

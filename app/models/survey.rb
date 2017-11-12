@@ -6,10 +6,10 @@ class Survey < ApplicationRecord
   def survey_stats
     stat_array = []
     self.questions.each{|q|
-      stat_array << q.raw_stats
+      question_info = {}
+      question_info[q.text] = q.raw_stats
+      stat_array << question_info
     }
     stat_array
   end
-
 end
-#Note: stat array returns [{answer.id: choice.count},{answer.id: choice.count, answer.id: choice.count}] the question number is going to be the array position + 1

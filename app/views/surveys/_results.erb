@@ -1,3 +1,13 @@
 <h2>Stats for <%= @survey.title %></h2>
 
-<p><%= @stats %></p>
+<%= @stats.each{|key, value|
+  title = key
+  passed_info = [title, ]
+    title.each{|answer, count|
+      data_point = count
+      index_label = answer
+      passed_info << [data_point, index_label]
+  }
+  passed_info.to_json
+}%>
+
