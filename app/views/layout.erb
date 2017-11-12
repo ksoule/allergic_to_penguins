@@ -28,15 +28,6 @@
 </head>
 <body>
 
-  <nav>
-    <% if logged_in? %>
-      <%= erb :'/sessions/_logged_in_links' %>
-    <% else %>
-      <%= erb :'/sessions/_logged_out_links' %>
-      <%= erb :'/users/_registration_form' %>
-    <% end %>
-    <a href="/">Home</a>
-  </nav>
 
   <% if @errors %>
     <%= erb :'/_errors' %>
@@ -44,6 +35,15 @@
 
   <h1>Welcome to Survey Puffin!</h1>    
     <div class="dynamic-div">
+      <nav>
+        <% if logged_in? %>
+          <%= erb :'/sessions/_logged_in_links' %>
+        <% else %>
+          <%= erb :'/sessions/_logged_out_links' %>
+          <%= erb :'/users/_registration_form' %>
+        <% end %>
+        <a href="/">Home</a>
+      </nav>
 
 
       <%= yield %>

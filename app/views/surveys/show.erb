@@ -6,7 +6,7 @@
     <input type="hidden" name="survey_id" value="<%= @survey.id %>">   
 
     <% @questions.each do |question| %>
-      <h2><%= question.text %></h2>
+      <h3><%= question.text %></h3>
 
         <% question.answers.each do |possible_answer| %>
           <input type="radio" name="choice[<%= question.id %>]" value="<%= possible_answer.id %>"> <%= possible_answer.text %>
@@ -15,6 +15,6 @@
 
     <% end %>
     <br>
-</div>
     <input class="pretty-button" type="submit" value="Submit choices">
   </form>
+</div>

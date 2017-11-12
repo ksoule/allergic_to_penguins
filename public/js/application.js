@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#register-link").on("click", regFormHandler)
+  $("nav").on("click", "#register-link", regFormHandler)
   $("nav").on("click", "#dropdown-login-link",switchToLoginHandler)
   $("nav").on("submit", "#registration", newUserHandler)
   $("nav").on("submit", "#login-form", newSessionHandler)
@@ -26,7 +26,7 @@ var switchToLoginHandler = function(event) {
   promise.done(function(response) {
     $("#registration").hide()
     $(".login-prompt").hide()
-    $("nav").append(response)
+    $("nav").prepend(response)
   }).always(function() {
     console.log("Login form loaded!")
   })
@@ -44,6 +44,7 @@ var newUserHandler = function(event) {
 
   promise.done(function(response) {
     $regForm.hide()
+    $(".new-survey").show()
     $(".login-prompt").hide()
     $("nav").append(response)
   }).always(function() {
@@ -63,6 +64,7 @@ var newSessionHandler = function(event) {
 
   promise.done(function(response){
     $loginForm.hide()
+    $(".new-survey").show()
     $("nav").append(response)
   }).always(function(){
     console.log("A user has logged in!")
@@ -72,17 +74,26 @@ var newSessionHandler = function(event) {
 var deleteSessionHandler = function(event) {
   event.preventDefault()
   var $logoutForm = $(this);
+  var $regLink = $("#register-link");
 
   var promise = $.ajax ({
     url: $logoutForm.attr("action"),
     method: "delete"
   })
 
-  promise.done(function(){
+  promise.done(function(response){
     $("#registration").trigger("reset")
     $("#logout-form").remove()
     $("#greeting").remove()
-    $("#register-link").show()
+    $(".new-survey").hide()
+
+    if ($regLink.length > 0){ 
+      $regLink.show()
+    }
+    else {
+      $("nav").prepend(response)
+    }
+
   }).always(function(){
     console.log("Logged out!")
   })

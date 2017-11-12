@@ -1,9 +1,9 @@
 body {
-  margin: 10px;
   background-color: #031e3f;
   background-image: url("../images/bird-puffin-kicking-up-one-leg.jpg");
   color: white;
   font-family: 'Barlow Condensed', sans-serif;
+  margin-left: 1cm;
 }
 
 h1 {
@@ -14,21 +14,17 @@ h1 {
 
 h2 {
   font-size: 250%;
+  color: #D0584E;
+  text-shadow: -2px 2px 2px black;
+}
+
+h3 {
+  font-size: 150%;
 }
 
 .todos {
   color: green;
   font-style: italic;
-}
-
-nav {
-  height: 35px;
-  width: 100%;
-  text-align: right;
-  right: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  top: 0;
 }
 
 .layout-links {
@@ -123,3 +119,28 @@ ul {
 .creator-info {
   font-style: italic;
 }
+
+.dynamic-div {
+  width: 500px;
+  float: left;
+}
+
+nav {
+  top: 0;
+  right: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin: 0 auto;
+  width: 150px;
+  height: 800px;
+  float: right;
+  background-color: #D0584E;
+  display: block;
+  position: fixed;
+}
+
+input {
+  color: black;
+}
+
+
