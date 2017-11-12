@@ -1,18 +1,20 @@
 <h2><%= @survey.title %></h2>
 
-<form class="current-survey" action="/choices" method="post"> 
-  <input type="hidden" name="survey_id" value="<%= @survey.id %>">   
+<div class="current-survey">
 
-  <% @questions.each do |question| %>
-    <h2><%= question.text %></h2>
+  <form action="/choices" method="post"> 
+    <input type="hidden" name="survey_id" value="<%= @survey.id %>">   
 
-      <% question.answers.each do |possible_answer| %>
-        <input type="radio" name="choice[<%= question.id %>]" value="<%= possible_answer.id %>"> <%= possible_answer.text %>
-      <% end %>
+    <% @questions.each do |question| %>
+      <h2><%= question.text %></h2>
 
-  <% end %>
-  <br>
-  <input class="pretty-button" type="submit" value="Submit choices">
-</form>
+        <% question.answers.each do |possible_answer| %>
+          <input type="radio" name="choice[<%= question.id %>]" value="<%= possible_answer.id %>"> <%= possible_answer.text %>
+          <br>
+        <% end %>
 
-``
+    <% end %>
+    <br>
+</div>
+    <input class="pretty-button" type="submit" value="Submit choices">
+  </form>

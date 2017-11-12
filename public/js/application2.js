@@ -14,6 +14,9 @@ var viewSurveyHandler = function(event){
   promise.done(function(response){
     $(".dynamic-div").children().remove()
     $(".dynamic-div").append(response)
+    $("body").css("background-image", 'url("../images/background.jpg")')
+
+
   }).always(function(){
     console.log("Survey loaded!")
   })
