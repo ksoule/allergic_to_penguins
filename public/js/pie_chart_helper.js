@@ -1,5 +1,4 @@
-<script type="text/javascript">
-window.onload = function () {
+window.onload = function() {
   var chart = new CanvasJS.Chart("chartContainer",
   {
     // Title needs to be the question text for the survey, along with the survey itself. ex: survey.name, question.text
@@ -28,7 +27,3 @@ window.onload = function () {
   });
   chart.render();
 }
-</script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
