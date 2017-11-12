@@ -1,6 +1,6 @@
 <h2>Take a survey!</h2>
 <% if logged_in? %>
-  <form class="new-survey" action="/surveys/new" method="post">
+  <form class="new-survey" action="/surveys/new" method="get">
     <input class="pretty-button" type="submit" value="Create New Survey">
   </form>
 <% end %>
