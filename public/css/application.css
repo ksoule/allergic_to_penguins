@@ -10,12 +10,17 @@ h1 {
   font-family: 'Chicle', cursive;
   font-size: 400%;
   color: #D2574A;
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-shadow: 1px 1px orange;
 }
 
 h2 {
   font-size: 250%;
   color: #D0584E;
   text-shadow: -2px 2px 2px black;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -103,12 +108,14 @@ ul {
 .current-survey {
   border: 5px solid #D2574A;
   width: 350px;
+  height: 450px;
   border-radius: 5px 5px 5px 5px;
   margin-bottom: 50px;
   background-color: rgba(198, 189, 186, 0.9);
   color: black;
   padding-left: 50px;
   padding-right: 10px;
+
 }
 
 .survey-title {
