@@ -76,7 +76,9 @@ ul {
   list-style-type: none;
 }
 
+
 #chartContainer {
+
   height: 300px;
   width: 100%;
 }
