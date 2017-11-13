@@ -1,7 +1,6 @@
-<form action="/surveys/<%= @survey.id %>/questions" method="post" class="question-form">
+<form action="/surveys/<%= @survey.id %>/questions" method="POST" class="question-form">
   <input type="text" name="question[text]" placeholder="Enter Question Here">
   <br>
   <br>
-  <button type="button" class="add-question-btn" ></button>
-  <input type="button">
+  <button type="submit" class="add-question-btn" >Add Responses</button>
 </form>

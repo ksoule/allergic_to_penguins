@@ -9,13 +9,15 @@ get '/surveys' do
 end
 
 get '/surveys/new' do
+  @survey = Survey.new
   erb :'/surveys/new'
 end
 
 post '/surveys' do
-  @survey = Survey.new(params[:survey])
+  redirect '/' unless current_user
+  @survey = current_user.surveys.new(params[:survey])
   if @survey.save
-  redirect "/questions/new", layout: false
+    redirect "/surveys/#{@survey.id}/questions/new"
   else
     @errors = @survey.errors.full_messages
     erb :'/surveys/new'

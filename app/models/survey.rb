@@ -3,6 +3,8 @@ class Survey < ApplicationRecord
   belongs_to :creator, class_name: "User"
   has_many :questions
 
+  validates :title, presence: true
+
   def survey_stats
     stat_array = []
     self.questions.each{|q|
