@@ -1,13 +1,25 @@
-# allergic_to_penguins
-DBC p2 mipoint team challenge
-# Skeleton with Notes
+#Allergic To Penguins
 
-## Working on any vertical slice (step by step)
- (this assumes you've done your schema, migration, and base models without associations first)
+*Team*
+-Kris Soule
+-Ally Seidl
+-Toby Ladislas
 
-- determine how you are going to get to the functionality you are building (click a link, type in the url, submit a form)
-- If click a link / submit a form, go the the erb (or create the erb) and add the link or the form html changes to it!
-- Now write the route in your controller file for the link or form action from the last step
-- In your controller route, decide what data you need from your model
-- decide where you will go next (erb / redirect)
-- In your models, you may need to add associations / validations / methods to support your work
+##Survey Puffin
+
+**Our MVP**
+
+-A logged in user can create and take surveys.
+-A survey has many questions, a question has many possible answers, and logged in users can choose one answer from each question.
+-After a survey is taken, a the logged in user can see survey statistics and trends in a graph.
+
+*Trello*
+-https://trello.com/b/4ee4CFf7/survey-puffin
+
+*Schema*
+
+![alt text](https://raw.githubusercontent.com/ksoule/allergic-to-penguins/master/puffin_schema.png)
+
+*Team Dynamics*
+-During this project, we used whiteboards and Trello for vertical slicing, team norms, and our schema.
+-Daily standups and frequent checkins were had, and 90s jams were played.
