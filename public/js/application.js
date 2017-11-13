@@ -4,6 +4,7 @@ $(document).ready(function() {
   $("nav").on("submit", "#registration", newUserHandler)
   $("nav").on("submit", "#login-form", newSessionHandler)
   $("nav").on("submit", "#logout-form", deleteSessionHandler)
+  $(".dynamic-div").on("submit", "#survey-title-form", addTitleHandler)
 });
 
 var regFormHandler = function(event) {
@@ -86,7 +87,7 @@ var deleteSessionHandler = function(event) {
     $("#greeting").remove()
     $(".new-survey").hide()
 
-    if ($regLink.length > 0){ 
+    if ($regLink.length > 0){
       $regLink.show()
     }
     else {
@@ -98,7 +99,32 @@ var deleteSessionHandler = function(event) {
   })
 };
 
+var addTitleHandler = function() {
+  event.preventDefault();
+  console.log("in addTitleHandler")
+  var surveyTarget = $(this)
+  var url = surveyTarget.attr('action')
+  var method = surveyTarget.attr('method')
+  var data = surveyTarget.serialize()
 
+  var request = $.ajax({
+    url: url,
+    data: data,
+    method: method
+  })
+
+  request.done(function (response) {
+    console.log(response)
+    surveyTarget.remove()
+    $('#survey-nav-btns').show()
+    $('#survey-form-container').append(response)
+  })
+
+  request.fail(function (response) {
+    console.log(response)
+    console.log('momy says im special')
+  })
+}
 
 
 
