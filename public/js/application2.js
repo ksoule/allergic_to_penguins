@@ -41,6 +41,9 @@ var submitSurveyHandler = function(event){
     $dynamicDiv.find("h3").remove()
     $dynamicDiv.find("form").remove()
     $dynamicDiv.find("div").remove()
+    $("body").css("background-image", "none")
+    $("body").css("background-color", "white")
+
 
     for(var i = 0; i < stats.length; i++) {
         $dynamicDiv.append(`<div id="question${i}">
