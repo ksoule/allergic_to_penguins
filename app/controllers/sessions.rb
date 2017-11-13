@@ -17,4 +17,5 @@ end
 
 delete '/sessions' do
   session[:user_id] = nil
+  erb :'/sessions/_logged_out_links', layout: false
 end
