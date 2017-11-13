@@ -1,6 +1,10 @@
 get '/surveys/:survey_id/questions/new' do
   @survey = Survey.find(params[:survey_id])
-  erb :'/questions/new'
+  if request.xhr?
+    erb :'/questions/_form', layout: false
+  else
+    erb :'/questions/new'
+  end
 end
 
 # get '/surveys/:survey_id/questions/' do

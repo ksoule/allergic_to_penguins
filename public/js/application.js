@@ -6,7 +6,9 @@ $(document).ready(function() {
   $("nav").on("submit", "#logout-form", deleteSessionHandler)
   $(".dynamic-div").on("submit", "#survey-title-form", addTitleHandler)
   $("#survey-form-container").on("submit", ".question-form", addQuestionHandler)
-  $("#survey-form-container").on("submit", ".add-new-answer", addAnswerHandler)
+  $("#survey-form-container").on("submit", "#add-new-answer", addAnswerHandler)
+  $('#survey-form-container').on("click", "#new-question-btn", newQuestionHandler)
+
 });
 
 var regFormHandler = function(event) {
@@ -103,7 +105,7 @@ var deleteSessionHandler = function(event) {
 
 var addTitleHandler = function() {
   event.preventDefault();
-  console.log("in addTitleHandler")
+  // console.log("in addTitleHandler")
   var surveyTarget = $(this);
   var url = surveyTarget.attr('action');
   var method = surveyTarget.attr('method');
@@ -118,7 +120,6 @@ var addTitleHandler = function() {
   request.done(function (response) {
     // console.log(response);
     surveyTarget.remove();
-    $('#survey-nav-btns').show();
     $('#survey-form-container').append(response);
   });
 
@@ -130,7 +131,7 @@ var addTitleHandler = function() {
 
 var addQuestionHandler = function() {
   event.preventDefault();
-  console.log("in addQuestionHandler");
+  // console.log("in addQuestionHandler");
   var questionTarget = $(this);
   var url = questionTarget.attr("action");
   var method = questionTarget.attr("method");
@@ -157,7 +158,7 @@ var addQuestionHandler = function() {
 
 var addAnswerHandler = function() {
   event.preventDefault();
-  console.log("in addAnswerHandler");
+  // console.log("in addAnswerHandler");
   var answerTarget = $(this);
   var url = answerTarget.attr("action");
   var method = answerTarget.attr("method");
@@ -170,16 +171,33 @@ var addAnswerHandler = function() {
   });
 
   request.done(function(response) {
-    console.log(response);
-    console.log("done answer");
+    // console.log(response);
     answerTarget.remove();
-    $('#survey-nav-btns').show();
     $("#survey-form-container").append(response);
   });
   request.fail(function (response) {
     console.log(response);
     console.log('New survey answer not added');
   });
+};
+
+var newQuestionHandler = function() {
+  event.preventDefault();
+  // console.log("in newQuestionHandler");
+
+  var newQuestionButton = $(this);
+  var url = newQuestionButton.attr("href")
+
+  var request = $.ajax({
+    url: url
+  });
+
+  request.done(function(response) {
+    // console.log(response);
+    $("#answers-form-container").remove();
+    $('#survey-form-container').append(response)
+  });
+
 }
 
 

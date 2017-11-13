@@ -1,3 +1,4 @@
-<button><a id='new-quest-btn' class='btn-link' href="/surveys/<%= @survey.id %>/questions/new">Add Question</a></button>
-
-<button><a id='done-survey-btn' class='btn-link' href="/surveys/<%= @survey.id %>">Complete Your Survey</a></button>
+<div id='survey-nav-btns' class='hidden'>
+  <button><a id="new-question-btn" href="/surveys/<%= @survey.id %>/questions/new">Add next Question</a></button>
+  <button><a href="/surveys/<%= @survey.id %>">View Your Survey</a></button>
+</div>
