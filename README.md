@@ -1,11 +1,11 @@
-#Allergic To Penguins
+#Allergic To Penguins#
 
-*Team*
--Kris Soule  
--Ally Seidl  
--Toby Ladislas
+*Team*  
+Kris Soule  
+Ally Seidl  
+Toby Ladislas
 
-##Survey Puffin
+##Survey Puffin##
 
 **Our MVP**
 
@@ -17,7 +17,7 @@
 -https://trello.com/b/4ee4CFf7/survey-puffin
 
 *Schema*
-![Alt text](/./puffin-schema.png?raw=true "Survey Puffin Schema")
+![Alt text](/./puffin_schema.png?raw=true "Survey Puffin Schema")
 
 *Team Dynamics*  
 -During this project, we used whiteboards and Trello for vertical slicing, team norms, and our schema.  
