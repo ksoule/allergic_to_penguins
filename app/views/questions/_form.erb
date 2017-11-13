@@ -1,6 +1,9 @@
-<form action="/surveys/<%= @survey.id %>/questions" method="POST" class="question-form">
-  <input type="text" name="question[text]" placeholder="Enter Question Here">
-  <br>
-  <br>
-  <button type="submit" class="add-question-btn" >Add Responses</button>
-</form>
+<div id='question-form-container'>
+  <%= erb :'/surveys/_survey_btns' %>
+  <form action="/surveys/<%= @survey.id %>/questions" method="POST" class="question-form">
+    <input type="text" name="question[text]" placeholder="Enter Question Here">
+    <br>
+    <br>
+    <button type="submit" class="add-question-btn" >Add Responses</button>
+  </form>
+</div>
