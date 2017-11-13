@@ -25,6 +25,7 @@ h2 {
 
 h3 {
   font-size: 150%;
+  color: black;
 }
 
 .todos {
@@ -92,11 +93,6 @@ ul {
   list-style-image: url('../images/cropuffin.png');
 }
 
-#chartContainer {
-  height: 300px;
-  width: 100%;
-}
-
 .surveys-container {
   border: 5px solid #D2574A;
   width: 300px;
@@ -122,6 +118,19 @@ ul {
   overflow-y: scroll;
 }
 
+#survey-form-container {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+#chart {
+  background-color: rgba(198, 189, 186, 0.9);
+  height: 450px;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+
 .survey-title {
   font-size: 150%;
   font-weight: bold;
@@ -134,6 +143,8 @@ ul {
 .dynamic-div {
   width: 500px;
   float: left;
+  height: 600px;
+  overflow-y: scroll;
 }
 
 nav {
