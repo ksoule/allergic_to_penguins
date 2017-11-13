@@ -13,12 +13,10 @@ post '/surveys/:survey_id/questions' do
   @question = @survey.questions.new(params[:question])
   if @question.save
     if request.xhr?
-      erb :'answers/_form', layout: false
+      erb :'/answers/_form', layout: false
     else
+      @errors = @question.errors.full_messages
       redirect "/surveys/#{@survey.id}/questions/#{@question.id}/answers/new"
     end
-  else
-    @errors = @question.errors.full_messages
-    erb :'/questions/new'
   end
 end

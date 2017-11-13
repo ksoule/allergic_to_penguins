@@ -22,7 +22,6 @@ post '/surveys' do
   else
     @errors = @survey.errors.full_messages
     redirect "/surveys/#{@survey.id}/questions/new"
-    # erb :'/surveys/new'
     end
   end
 end

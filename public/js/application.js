@@ -5,6 +5,7 @@ $(document).ready(function() {
   $("nav").on("submit", "#login-form", newSessionHandler)
   $("nav").on("submit", "#logout-form", deleteSessionHandler)
   $(".dynamic-div").on("submit", "#survey-title-form", addTitleHandler)
+  $("#survey-form-container").on("submit", ".question-form", addQuestionHandler)
 });
 
 var regFormHandler = function(event) {
@@ -102,29 +103,56 @@ var deleteSessionHandler = function(event) {
 var addTitleHandler = function() {
   event.preventDefault();
   console.log("in addTitleHandler")
-  var surveyTarget = $(this)
-  var url = surveyTarget.attr('action')
-  var method = surveyTarget.attr('method')
-  var data = surveyTarget.serialize()
+  var surveyTarget = $(this);
+  var url = surveyTarget.attr('action');
+  var method = surveyTarget.attr('method');
+  var data = surveyTarget.serialize();
 
   var request = $.ajax({
     url: url,
     data: data,
     method: method
-  })
+  });
 
   request.done(function (response) {
-    console.log(response)
-    surveyTarget.remove()
-    $('#survey-nav-btns').show()
-    $('#survey-form-container').append(response)
-  })
+    console.log(response);
+    surveyTarget.remove();
+    $('#survey-nav-btns').show();
+    $('#survey-form-container').append(response);
+  });
 
   request.fail(function (response) {
-    console.log(response)
-    console.log('momy says im special')
-  })
-}
+    console.log(response);
+    console.log('New survey title not added');
+  });
+};
+
+var addQuestionHandler = function() {
+  event.preventDefault();
+  console.log("in addQuestionHandler");
+  var questionTarget = $(this);
+  var url = questionTarget.attr("action");
+  var method = questionTarget.attr("method");
+  var data = questionTarget.serialize();
+
+  var request = $.ajax({
+    url: url,
+    data: data,
+    method: method
+  });
+
+  request.done(function(response) {
+    console.log(response);
+    // console.log("done question");
+    questionTarget.remove();
+    $('#survey-nav-btns').show();
+    $("#survey-form-container").append(response);
+  });
+  request.fail(function (response) {
+    console.log(response);
+    console.log('New survey question not added');
+  });
+};
 
 
 
