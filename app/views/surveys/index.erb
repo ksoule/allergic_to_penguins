@@ -1,13 +1,5 @@
 <h2>Take a survey!</h2>
 
-<% if logged_in? %>
-  <form class="new-survey" action="/surveys/new">
-    <input class="pretty-button" type="submit" value="Create New Survey">
-  </form>
-<% end %>
-
-
-
 <div class="surveys-container">
   <ul>
     <% @surveys.each do |survey| %>
@@ -18,8 +10,8 @@
 </div>
 
 <% if logged_in? %>
-  <form class="new-survey" action="/surveys/new" method="post">
-    <input class="pretty-button new-survey-button" type="submit" value="Create New Survey">
+  <form class="new-survey" action="/surveys/new">
+    <input class="pretty-button" type="submit" value="Create New Survey">
   </form>
 <% end %>
 

@@ -17,10 +17,12 @@ post '/surveys' do
   redirect '/' unless current_user
   @survey = current_user.surveys.new(params[:survey])
   if @survey.save
-    redirect "/surveys/#{@survey.id}/questions/new"
+    if request.xhr?
+      erb :'/questions/_form', layout: false
   else
     @errors = @survey.errors.full_messages
-    erb :'/surveys/new'
+    redirect "/surveys/#{@survey.id}/questions/new"
+    end
   end
 end
 

@@ -10,9 +10,11 @@ post '/surveys/:survey_id/questions/:question_id/answers' do
   @question = Question.find(params[:question_id])
   @answer = @question.answers.new(params[:answer])
   if @answer.save
-    redirect "/surveys/#{@survey.id}/questions/#{@question.id}/answers/new"
+    if request.xhr?
+      erb :'/answers/_form', layout: false
   else
     @errors = @answer.errors.full_messages
-    erb :'/answers/new'
+    redirect "/surveys/#{@survey.id}/questions/#{@question.id}/answers/new"
+    end
   end
 end

@@ -1,11 +1,15 @@
-<h1>Survey Puffin!</h1>
-
-<center>
-  <form class="create-new-survey" action="/surveys" method="POST" id="new-survey-form">
-<img src="/images/create.jpg" alt="create">
-<br>
-    <label>Title: </label>
-    <input type="text" name="survey[title]" size="60">
-    <input class="pretty-button" type="submit" value="Next Step: Add Questions">
-  </form>
-</center>
+<div id='survey-form-container'>
+  <center>
+    <img src="/images/create.jpg" alt="create">
+    <div id='survey-nav-btns' class='hidden'>
+      <button><a id="new-question-btn" href="/surveys/<%= @survey.id %>/questions/new">Add next Question</a></button>
+      <button><a href="/surveys/<%= @survey.id %>">View Your Survey</a></button>
+    </div>
+    <form id="survey-title-form" class="create-new-survey" action="/surveys" method="POST" id="new-survey-form">
+  <br>
+      <label>Title: </label>
+      <input type="text" name="survey[title]" size="60">
+      <input id="add-survey-btn" class="pretty-button" type="submit" value="Add Survey Title">
+    </form>
+  </center>
+</div>
