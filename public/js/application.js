@@ -6,6 +6,7 @@ $(document).ready(function() {
   $("nav").on("submit", "#logout-form", deleteSessionHandler)
   $(".dynamic-div").on("submit", "#survey-title-form", addTitleHandler)
   $("#survey-form-container").on("submit", ".question-form", addQuestionHandler)
+  $("#survey-form-container").on("submit", ".add-new-answer", addAnswerHandler)
 });
 
 var regFormHandler = function(event) {
@@ -115,7 +116,7 @@ var addTitleHandler = function() {
   });
 
   request.done(function (response) {
-    console.log(response);
+    // console.log(response);
     surveyTarget.remove();
     $('#survey-nav-btns').show();
     $('#survey-form-container').append(response);
@@ -142,7 +143,7 @@ var addQuestionHandler = function() {
   });
 
   request.done(function(response) {
-    console.log(response);
+    // console.log(response);
     // console.log("done question");
     questionTarget.remove();
     $('#survey-nav-btns').show();
@@ -154,5 +155,31 @@ var addQuestionHandler = function() {
   });
 };
 
+var addAnswerHandler = function() {
+  event.preventDefault();
+  console.log("in addAnswerHandler");
+  var answerTarget = $(this);
+  var url = answerTarget.attr("action");
+  var method = answerTarget.attr("method");
+  var data = answerTarget.serialize();
+
+  var request = $.ajax({
+    url: url,
+    data: data,
+    method: method
+  });
+
+  request.done(function(response) {
+    console.log(response);
+    console.log("done answer");
+    answerTarget.remove();
+    $('#survey-nav-btns').show();
+    $("#survey-form-container").append(response);
+  });
+  request.fail(function (response) {
+    console.log(response);
+    console.log('New survey answer not added');
+  });
+}
 
 
