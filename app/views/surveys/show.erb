@@ -2,7 +2,7 @@
 
 <div class="current-survey">
 
-  <form action="/choices" method="post"> 
+  <form class="survey-form" action="/choices" method="post"> 
     <input type="hidden" name="survey_id" value="<%= @survey.id %>">   
 
     <% @questions.each do |question| %>
