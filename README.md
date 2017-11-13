@@ -1,11 +1,11 @@
-#Allergic To Penguins#
+# Allergic To Penguins
 
 *Team*  
 Kris Soule  
 Ally Seidl  
 Toby Ladislas
 
-##Survey Puffin##
+## Survey Puffin
 
 **Our MVP**
 
