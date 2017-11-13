@@ -107,7 +107,7 @@ ul {
 
 .current-survey {
   border: 5px solid #D2574A;
-  width: 350px;
+  width: 400px;
   height: 450px;
   border-radius: 5px 5px 5px 5px;
   margin-bottom: 50px;
@@ -115,7 +115,11 @@ ul {
   color: black;
   padding-left: 50px;
   padding-right: 10px;
+}
 
+.survey-form {
+  height: 450px;
+  overflow-y: scroll;
 }
 
 .survey-title {
