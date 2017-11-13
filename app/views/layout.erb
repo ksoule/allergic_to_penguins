@@ -7,14 +7,18 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+
   <!--
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<!-- <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
 <script src="/js/application.js"></script>
 <script src="/js/application2.js"></script>
 <script src="/js/pie_chart_helper.js"></script>
@@ -24,15 +28,6 @@
 </head>
 <body>
 
-  <nav>
-    <% if logged_in? %>
-      <%= erb :'/sessions/_logged_in_links' %>
-    <% else %>
-      <%= erb :'/sessions/_logged_out_links' %>
-      <%= erb :'/users/_registration_form' %>
-    <% end %>
-    <a href="/">Home</a>
-  </nav>
 
   <% if @errors %>
     <%= erb :'/_errors' %>
@@ -40,6 +35,15 @@
 
   <h1>Welcome to Survey Puffin!</h1>    
     <div class="dynamic-div">
+      <nav>
+        <% if logged_in? %>
+          <%= erb :'/sessions/_logged_in_links' %>
+        <% else %>
+          <%= erb :'/sessions/_logged_out_links' %>
+          <%= erb :'/users/_registration_form' %>
+        <% end %>
+        <a href="/">Home</a>
+      </nav>
 
 
       <%= yield %>

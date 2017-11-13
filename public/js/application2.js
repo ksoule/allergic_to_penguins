@@ -12,8 +12,13 @@ var viewSurveyHandler = function(event){
   })
 
   promise.done(function(response){
-    $(".dynamic-div").children().remove()
+    $(".dynamic-div").find("h2").remove()
+    $(".dynamic-div").find("form").remove()
+    $(".dynamic-div").find("div").remove()
     $(".dynamic-div").append(response)
+    $("body").css("background-image", 'url("../images/background.jpg")')
+
+
   }).always(function(){
     console.log("Survey loaded!")
   })
@@ -21,7 +26,7 @@ var viewSurveyHandler = function(event){
 
 var submitSurveyHandler = function(event){
   event.preventDefault()
-  var $survey = $(this);
+  var $survey = $(this).find("form");
 
   var promise = $.ajax ({
     url: $survey.attr("action"),
@@ -30,7 +35,10 @@ var submitSurveyHandler = function(event){
   })
 
   promise.done(function(response){
-    $(".dynamic-div").children().remove()
+    $(".dynamic-div").find("h2").remove()
+    $(".dynamic-div").find("h3").remove()
+    $(".dynamic-div").find("form").remove()
+    $(".dynamic-div").find("div").remove()
     $(".dynamic-div").append(response)
   }).always(function(){
     console.log("Survey completed!")
