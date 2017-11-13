@@ -2,13 +2,5 @@
 
 
 <center>
-  <form class="add-new-question-form" method="post" action="/surveys/<%= @survey.id %>/questions">
-    <label>Question: </label>
-    <input type="text" name="question">
-    <br>
-    <br>
-    <input type="submit" value="Add Potential Responses">
-     <!-- <button type="submit" formaction="/answers/new">Add potential responses</button> -->
-
-  </form>
+  <%= erb :'/questions/_form' %>
 </center>
