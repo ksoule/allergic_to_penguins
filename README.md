@@ -18,7 +18,7 @@
 
 *Schema*
 
-![alt text](https://raw.githubusercontent.com/ksoule/allergic-to-penguins/master/puffin_schema.png)
+![alt text](https://raw.githubusercontent.com/ksoule/allergic-to-penguins/readme-update-t/puffin_schema.png)
 
 *Team Dynamics*
 -During this project, we used whiteboards and Trello for vertical slicing, team norms, and our schema.
